@@ -8,6 +8,84 @@ body {
     align-items: center;
     justify-content: center;
     font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    margin: 0 auto;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    padding: 20px;
+    background-color: #383f47;
+
+}
+
+.task-title {
+    width: 400px;
+    padding: 10px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 15px 15px 0 0;
+    background-color: #313a44;
+    color: white;
+}
+
+.task-desc {
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 0 0 15px 15px;
+    background-color: #424b56;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+section {
+    width: 400px;
+    color: grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+section button {
+    background-color: #313a44;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+section button:hover {
+    scale: 1.05;
+    font-size: 30px;
+    background-color: white;
+    color: #313a44;
 }
 
 .container {
@@ -33,21 +111,11 @@ body {
     width: 100px;
 }
 
-input {
-    width: 400px;
-    padding: 10px;
-    padding-left: 15px;
-    border: none;
-    border-radius: 15px;
-    background-color: #313a44;
-    color: white;
-}
-
 .container-divisor {
     background-color: grey;
     width: 400px;
     height: 1px;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-bottom: 25px;
 }
 
