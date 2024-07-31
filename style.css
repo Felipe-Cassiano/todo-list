@@ -1,3 +1,5 @@
+/* CONFIGURAÇÕES GERAIS */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
@@ -11,6 +13,10 @@ body {
     margin: 0;
 }
 
+/* ------------------------------------------------------------------------ */
+
+
+/* Modal-Criar Task */
 .modal {
     display: none;
     position: fixed;
@@ -20,9 +26,47 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+.modal-info {
+    display: flex;
+    width: 425px;
+    justify-content: space-between;
+    align-items: center;
+    color: grey;
+    padding: 20px 0 20px 0;
+}
+
+.modalH1 {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.close-modal {
+    background-color: #313a44;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.close-modal:hover {
+    scale: 1.05;
+    font-size: 30px;
+    background-color: white;
+    color: #313a44;
+}
+
 .modal-content {
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +74,7 @@ body {
     width: 500px;
     padding: 20px;
     background-color: #383f47;
-
+    border-radius: 15px;
 }
 
 .task-title {
@@ -48,14 +92,73 @@ body {
     height: 100px;
     padding: 10px;
     padding-left: 15px;
+    margin-bottom: 20px;
     border: none;
     border-radius: 0 0 15px 15px;
     background-color: #424b56;
     color: white;
-    display: flex;
-    align-items: center;
 }
 
+
+.create-task {
+    background-color: #313a44;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    width: 150px;
+    height: 30px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.create-task:hover {
+    scale: 1.05;
+    font-size: 15px;
+    background-color: white;
+    color: #313a44;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* Modal-Checar Task */
+
+.modalTask {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.modalDesc {
+    width: 400px;
+    text-align: start;
+    color: white;
+    font-size: 15px;
+    margin: 0;
+    padding-bottom: 20px;
+}
+/* ------------------------------------------------------------------------ */
+
+/* CONTAINER PRINCIPAL */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #383f47;
+    padding: 20px 30px 20px 30px;
+    border-radius: 15px;
+}
+
+/* Área de cima  */
 section {
     width: 400px;
     color: grey;
@@ -88,16 +191,10 @@ section button:hover {
     color: #313a44;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #383f47;
-    padding: 20px;
-    border-radius: 15px;
-}
+/* ------------------------------------------------------------------------ */
 
+
+/* IMAGEM VAZIA */
 .vazio {
     display: flex;
     justify-content: center;
@@ -110,7 +207,9 @@ section button:hover {
 .vazio img {
     width: 100px;
 }
+/* ---------------------------------- */
 
+/* DIVISOR DIV */
 .container-divisor {
     background-color: grey;
     width: 400px;
@@ -118,7 +217,9 @@ section button:hover {
     margin-top: 15px;
     margin-bottom: 25px;
 }
+/* ---------------------------------- */
 
+/* TASKS ESQUELETO */
 ul {
     margin: 0;
     padding: 0;
@@ -149,17 +250,41 @@ ul {
     background-color: lightgreen;
 }
 
+/* ---------------------------------- */
+
+/* INFORMAÇÕES TASK */
 .taskInfo {
     display: flex;
+    flex-direction: column;
     text-align: center;
-    align-items: center;
+    justify-content: center;
+    align-items: start;
     min-height: 25px;
     width: 330px;
     padding: 10px;
     overflow: hidden;
 }
 
+.taskTitle {
+    margin: 0;
+}
 
+.taskDesc {
+    font-size: 10px;
+    color: gray;
+    margin: 0;  
+    cursor: pointer;
+    overflow: hidden;
+    text-align: start;
+    max-height: 15px;
+}
+
+.taskDesc:hover {
+    text-decoration: underline;
+}
+/* ---------------------------------- */
+
+/* DELETAR TASK */
 .taskDelete {
     width: 22px;
     height: 22px;
@@ -172,4 +297,6 @@ ul {
 .taskDelete:hover {
     background-color: red;
 }
+/* ---------------------------------- */
 
+/* ------------------------------------------------------------------------ */

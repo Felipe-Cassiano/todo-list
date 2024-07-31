@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,13 @@
 
     <div class="modal">
         <div class="modal-content">
-            <input type="text" placeholder="Título" data-create-task class="task-title">
-            <input type="text" placeholder="Adicione uma descrição" data-description class="task-desc">
+            <div class="modal-info">
+                <h1 class="modalH1">Adicione uma Tarefa</h1>
+                <button data-close-modal class="close-modal">&times;</button>
+            </div>
+            <input type="text" placeholder="Título" class="task-title" data-task-title>
+            <input type="text" placeholder="Adicione uma descrição" data-task-description class="task-desc">
+            <button data-create-task class="create-task">Criar Tarefa</button>
         </div>
     </div>
     
