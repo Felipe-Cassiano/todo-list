@@ -138,6 +138,7 @@ body {
 
 .modalDesc {
     width: 400px;
+    height: fit-content;
     text-align: start;
     color: white;
     font-size: 15px;
