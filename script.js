@@ -10,22 +10,32 @@ document.querySelector('[data-close-modal]').addEventListener('click', () => {
 
 // Criar tarefa
 document.querySelector('[data-create-task]').addEventListener("click", () => {
-        if (document.querySelector(".task-title").value != '') {
-            const task = document.createElement('li')
+    if (document.querySelector(".task-title").value != '') {
+        const task = document.createElement('li')
+        if (document.querySelector('input[name="color"]:checked').value == 'dark') {
             task.classList.add('task')
             document.querySelector('ul').appendChild(task)
             task.appendChild(taskCheck())
             task.appendChild(taskInfo())
             task.appendChild(taskDelete())
 
-            if (document.querySelector('.vazio').style.display = 'block') {
-                document.querySelector('.vazio').style.display = 'none'
-            } 
+        } else {
+            task.classList.add('task-light')
+            document.querySelector('ul').appendChild(task)
+            task.appendChild(taskCheckLight())
+            task.appendChild(taskInfo())
+            task.appendChild(taskDeleteLight())
+
         }
 
-        document.querySelector("[data-task-title]").value = ''
-        document.querySelector("[data-task-description]").value = ''
-        document.querySelector('.modal').style.display = 'none'
+        if (document.querySelector('.vazio').style.display = 'block') {
+            document.querySelector('.vazio').style.display = 'none'
+        }
+    }
+
+    document.querySelector("[data-task-title]").value = ''
+    document.querySelector("[data-task-description]").value = ''
+    document.querySelector('.modal').style.display = 'none'
 })
 
 
@@ -34,7 +44,6 @@ const taskCheck = () => {
     const taskCheck = document.createElement(`img`)
     taskCheck.classList.add('taskCheck')
     taskCheck.setAttribute('src', './imgs/emptyCheckbox.png')
-    taskCheck.addEventListener("click", completeTask)
     taskCheck.addEventListener("click", completeTask)
     return taskCheck
 }
@@ -50,6 +59,28 @@ const completeTask = (i) => {
         tarefaCompleta.style.textDecoration = 'none'
         tarefaCompleta.style.color = 'white'
         botaoConclui.setAttribute('src', './imgs/emptyCheckbox.png')
+    }
+}
+
+const taskCheckLight = () => {
+    const taskCheck = document.createElement(`img`)
+    taskCheck.classList.add('taskCheck')
+    taskCheck.setAttribute('src', './imgs/emptyCheckboxDark.png')
+    taskCheck.addEventListener("click", completeTaskLight)
+    return taskCheck
+}
+
+const completeTaskLight = (i) => {
+    const botaoConclui = i.target
+    const tarefaCompleta = botaoConclui.parentElement
+    if (botaoConclui.src !== 'http://127.0.0.1:5500/imgs/markedCheckboxDark.png') {
+        tarefaCompleta.style.textDecoration = 'line-through'
+        tarefaCompleta.style.color = 'grey'
+        botaoConclui.setAttribute('src', './imgs/markedCheckboxDark.png')
+    } else {
+        tarefaCompleta.style.textDecoration = 'none'
+        tarefaCompleta.style.color = 'black'
+        botaoConclui.setAttribute('src', './imgs/emptyCheckboxDark.png')
     }
 }
 // ----------------------------
@@ -75,20 +106,20 @@ const taskInfo = () => {
         const modal = document.createElement('div')
         modal.classList.add('modalTask')
         modal.style.display = 'block'
-    
+
         const modalContent = document.createElement('div')
         modalContent.classList.add('modal-content')
-    
+
         const modalInfo = document.createElement('div')
         modalInfo.classList.add('modal-info')
         modalInfo.style.width = '400px'
         modalInfo.style.paddingBottom = '0'
-    
+
         const modalTitle = document.createElement('h1')
         modalTitle.classList.add('modalH1')
         modalTitle.textContent = inputTask
-    
-        const closeButton = document.createElement('button') 
+
+        const closeButton = document.createElement('button')
         closeButton.innerHTML = '&times;'
         closeButton.classList.add('close-modal')
         closeButton.addEventListener('click', closeModal)
@@ -99,7 +130,7 @@ const taskInfo = () => {
         const modalDesc = document.createElement('p')
         modalDesc.textContent = inputDesc
         modalDesc.classList.add('modalDesc')
-    
+
         modalInfo.appendChild(modalTitle)
         modalInfo.appendChild(closeButton)
         modalContent.appendChild(modalInfo)
@@ -107,7 +138,7 @@ const taskInfo = () => {
         modalContent.appendChild(modalDesc)
         modal.appendChild(modalContent)
         document.body.appendChild(modal)
-        
+
     })
 
     taskText.appendChild(taskInfo)
@@ -136,6 +167,13 @@ const deleteTask = (i) => {
         document.querySelector('.vazio').style.display = 'flex'
     }
     return botaoDeletar
+}
+const taskDeleteLight = () => {
+    const taskDelete = document.createElement(`img`)
+    taskDelete.classList.add('taskDelete')
+    taskDelete.setAttribute('src', './imgs/lixeiraDark.png')
+    taskDelete.addEventListener("click", deleteTask)
+    return taskDelete
 }
 // ----------------------------
 

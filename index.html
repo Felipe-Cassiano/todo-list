@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do List</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/modal.css">
+    <link rel="stylesheet" href="./styles/container.css">
+    <link rel="stylesheet" href="./styles/menu.css">
 </head>
 <body>
 
@@ -16,18 +19,28 @@
             </div>
             <input type="text" placeholder="Título" class="task-title" data-task-title>
             <input type="text" placeholder="Adicione uma descrição" data-task-description class="task-desc">
+            <div class="color">
+                <input type="radio" name="color" id="dark-mode" value="dark">
+                <input type="radio" name="color" id="light-mode">
+            </div>
             <button data-create-task class="create-task">Criar Tarefa</button>
         </div>
     </div>
     
+    <div class="menu">
+        a
+    </div>
+
     <div class="container">
 
         <section>
-            <h2 data-date></h2>
-            <button data-button>+</button>
+            <div class="section-info">
+                <h2>NOME PROJETO</h2>
+                <p data-date></p>
+            </div>
+            <button data-button>+ Nova Tarefa</button>
         </section>
         
-        <div class="container-divisor"></div>
         <div class="vazio">
             <img src="./imgs/vazio.png" alt="">
             <p>Sua lista de tarefas está vazia. Adicione uma tarefa!</p>
